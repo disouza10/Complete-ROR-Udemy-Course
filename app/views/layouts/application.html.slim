@@ -3,26 +3,13 @@ html
   head
     title
       | MessageMe
+    = favicon_link_tag
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     .ui.small.inverted.menu
       .ui.container
-        a.item
-          | Home
-        a.item
-          | Messages
-        .right.menu
-          .ui.dropdown.item
-            | Language
-            i.dropdown.icon
-            .menu
-              a.item English
-              a.item Russian
-              a.item Spanish
-          .item
-            .ui.primary.button Sign Up
-
+        = render 'layouts/navigation'
     .ui.container
       = yield
