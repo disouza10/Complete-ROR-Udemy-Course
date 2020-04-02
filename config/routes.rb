@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     password: 'secret', 
     confirmation: 'verification', 
     unlock: 'unblock', 
-    registration: 'register', 
+    registration: 'sign_up', 
     sign_up: 'cmon_let_me_in'
   }
 

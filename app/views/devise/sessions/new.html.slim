@@ -1,0 +1,22 @@
+.ui.placeholder.segment
+  .ui.two.column.very.relaxed.stackable.grid
+    .column
+      .ui.form
+        .field
+          label Username
+          .ui.left.icon.input
+            input placeholder="Username" type="text"
+            i.user.icon
+        .field
+          label Password
+          .ui.left.icon.input
+            input type="password"
+            i.lock.icon
+        .ui.blue.submit.button Login
+    .middle.aligned.column
+      .ui.big.button
+        = link_to user_registration_path do
+          span = 'Sign up'
+          i.signup.icon
+  .ui.vertical.divider
+    | Or

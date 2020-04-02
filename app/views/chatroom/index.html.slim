@@ -6,34 +6,20 @@ h4.ui.center.aligned.medium.icon.header
   .twelve.wide.column
     .ui.card.fluid.raised.card.chatbox
       .content
-        .ui.small.feed
-          h4.ui.header Followers Activity
-          .event
-            .content
-              .summary
-                a Elliot Fu
-                | added
-                a Jenny Hess
-                | as a friend
-          .event
-            .content
-              .summary
-                a Stevie Feliciano
-                | added
-                a Elliot Fu
-                | as a friend
-          .event
-            .content
-              .summary
-                a Helen Troy
-                | added
-                a Christian Rocha
-                | as a friend
-          .event
-            .content
-              .summary
-                a Christian Rocha
-                | signed up for the  site.
+        .ui.feed
+          - @messages.each do |message|
+            .event
+              .content
+                .summary
+                  em = message.user.username + ": "
+                  = message.body
+      .extra-content
+        form.ui.reply.form
+          .field
+            .ui.fluid.icon.input
+              input placeholder=("Enter a message...") type="text"
+              i.bordered.inverted.orange.edit.icon
+
   .four.wide.column
     .ui.card.fluid.raised.card.chatbox
       .content
