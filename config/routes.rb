@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   
   root 'chatroom#index'
   
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  
   devise_for :users, path_names: {
     sign_in: 'login', 
     sign_out: 'logout', 
