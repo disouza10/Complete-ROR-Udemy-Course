@@ -9,11 +9,11 @@ h4.ui.center.aligned.medium.icon.header
         .ui.feed
           = render @messages
       .extra-content
-        form.ui.reply.form
+        = form_for(@message, html: {class: 'ui reply form'}, url: message_path) do |f|
           .field
             .ui.fluid.icon.input
-              input placeholder=("Enter a message...") type="text"
-              i.bordered.inverted.orange.edit.icon
+              = f.text_field :body
+              = f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe
 
   .four.wide.column
     .ui.card.fluid.raised.card.chatbox
